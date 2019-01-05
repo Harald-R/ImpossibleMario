@@ -21,8 +21,9 @@ public class CharacterController2D : MonoBehaviour
     private bool _wasSliding = false;
     private Rigidbody2D _rigidbody2D;
 	private Vector3 _velocity = Vector3.zero;
-    private float slideVelocity = 0.0f;
     private float _crouchDecay = 1.0f;
+    private float currentHeight;
+    private float previousHeight = 0f;
 
     [Header("Events")]
 	[Space]
@@ -57,12 +58,34 @@ public class CharacterController2D : MonoBehaviour
 			{
 				_grounded = true;
 				_animator.SetBool("is_grounded", true);
-				if (!wasGrounded) {
+                if (!wasGrounded) {
 					OnLandEvent.Invoke();
 				}
 			}
 		}
-	}
+
+        currentHeight = transform.position.y;
+        if (!_grounded)
+        {
+            _animator.SetBool("is_grounded", false);
+            if (currentHeight - previousHeight < 0 && previousHeight != 0)
+            {
+                _animator.SetBool("is_falling", true);
+                _animator.SetBool("is_jumping", false);
+            }
+            else
+                _animator.SetBool("is_falling", false);
+            _airControl = true;
+        }
+        else
+        {
+            _animator.SetBool("is_falling", false);
+            _animator.SetBool("is_jumping", false);
+            _airControl = false;
+        }
+
+        previousHeight = currentHeight;
+    }
 
 	public void Move(float move, bool crouch, bool jump)
 	{
@@ -76,18 +99,17 @@ public class CharacterController2D : MonoBehaviour
 			}
 		}
 
-		//only control the player if grounded or airControl is turned on
-		if (_grounded || _airControl)
-		{
-            //Debug.Log(crouch);
+        //only control the player if grounded or airControl is turned on
+
+        if (_grounded)
+        {
             _animator.SetBool("is_crouching", crouch);
-            // If crouching
             if (crouch)
-			{
-				if (!_wasCrouching)
-				{
-					_wasCrouching = true;
-					OnCrouchEvent.Invoke(true);
+            {
+                if (!_wasCrouching)
+                {
+                    _wasCrouching = true;
+                    OnCrouchEvent.Invoke(true);
                     if (Mathf.Abs(move) > 0)
                         _wasSliding = true;
                     else
@@ -106,33 +128,38 @@ public class CharacterController2D : MonoBehaviour
                     else
                         _crouchDecay = _crouchSpeed;
                 }
-                
+
                 // Disable one of the colliders when crouching
                 if (_crouchDisableCollider != null)
-					_crouchDisableCollider.enabled = false;
+                    _crouchDisableCollider.enabled = false;
 
-            } else
-			{
+            }
+            else
+            {
                 // Restart running naturally
                 if (_crouchDecay < 1.0f)
                     _crouchDecay += 0.025f;
                 else
                     _crouchDecay = 1.0f;
-                
+
                 // Enable the collider when not crouching
                 if (_crouchDisableCollider != null)
-					_crouchDisableCollider.enabled = true;
+                    _crouchDisableCollider.enabled = true;
 
-				if (_wasCrouching)
-				{
-					_wasCrouching = false;
+                if (_wasCrouching)
+                {
+                    _wasCrouching = false;
                     _wasSliding = false;
                     OnCrouchEvent.Invoke(false);
-				}
-			}
+                }
+            }
+        }
 
+
+        if (_grounded || _airControl)
+		{
             move *= _crouchDecay;
-            Debug.Log(move);
+           // Debug.Log(move);
             _animator.SetFloat("speed", Mathf.Abs(move));
 
             // Move the character by finding the target velocity
@@ -161,8 +188,11 @@ public class CharacterController2D : MonoBehaviour
 			_rigidbody2D.AddForce(new Vector2(0f, _jumpForce));
 
 			_animator.SetBool("is_grounded", false);
-			_animator.Play("Player_jump");
+            _animator.SetBool("is_jumping", true);
+            //_animator.Play("Player_jump");
 		}
+
+        
 	}
 
 

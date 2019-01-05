@@ -79,7 +79,7 @@ GameObject:
   - component: {fileID: 155}
   - component: {fileID: 159}
   m_Layer: 8
-  m_Name: "Player\x1A\x1A"
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

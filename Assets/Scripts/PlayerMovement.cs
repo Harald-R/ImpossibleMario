@@ -25,12 +25,19 @@ public class PlayerMovement : NetworkBehaviour
     {
         // Check if the player has authority over this game object, i.e. handling its local object
         if(hasAuthority) {
-            #if UNITY_STANDALONE || UNITY_EDITOR
+#if UNITY_STANDALONE || UNITY_EDITOR
                 _move = Input.GetAxisRaw("Horizontal") * runSpeed;
                 if(Input.GetButtonDown("Jump")) {
                     _jump = true;
+                } 
+            
+                if(Input.GetButton("Crouch") && !_jump) {
+                    _crouch = true;
+                } else {
+                    _crouch = false;
                 }
-            #elif UNITY_ANDROID
+                    
+#elif UNITY_ANDROID
                 if(Mathf.Abs(joystick.Horizontal) < .2f) {
                     _move = 0f;
                 } else if(Mathf.Abs(joystick.Horizontal) < .5f) {
@@ -42,7 +49,7 @@ public class PlayerMovement : NetworkBehaviour
                 if(jumpButton.isPressed) {
                     _jump = true;
                 }
-            #endif
+#endif
         }
 
         // Send the new state of the model to the server
@@ -56,8 +63,9 @@ public class PlayerMovement : NetworkBehaviour
         }
 
         // Move the character for the local player
-        controller.Move(_move * Time.fixedDeltaTime, false, _jump);
+        controller.Move(_move * Time.fixedDeltaTime, _crouch, _jump);
 
+        
         _jump = false;
     }
 
@@ -90,6 +98,7 @@ public class PlayerMovement : NetworkBehaviour
         _jump = jump;
 
         // Change the model position for the rest of the clients
+        
         controller.Move(move * Time.fixedDeltaTime, crouch, jump);
         
         _jump = false;

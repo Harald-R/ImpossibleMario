@@ -18,10 +18,13 @@ public class CharacterController2D : MonoBehaviour
 	private bool _grounded;              // Whether or not the player is grounded.
 	private bool _facingRight = true;    // For determining which way the player is currently facing.
 	private bool _wasCrouching = false;
-	private Rigidbody2D _rigidbody2D;
+    private bool _wasSliding = false;
+    private Rigidbody2D _rigidbody2D;
 	private Vector3 _velocity = Vector3.zero;
+    private float slideVelocity = 0.0f;
+    private float _crouchDecay = 1.0f;
 
-	[Header("Events")]
+    [Header("Events")]
 	[Space]
 
 	public UnityEvent OnLandEvent;
@@ -76,39 +79,64 @@ public class CharacterController2D : MonoBehaviour
 		//only control the player if grounded or airControl is turned on
 		if (_grounded || _airControl)
 		{
-
-			// If crouching
-			if (crouch)
+            //Debug.Log(crouch);
+            _animator.SetBool("is_crouching", crouch);
+            // If crouching
+            if (crouch)
 			{
 				if (!_wasCrouching)
 				{
 					_wasCrouching = true;
 					OnCrouchEvent.Invoke(true);
-				}
+                    if (Mathf.Abs(move) > 0)
+                        _wasSliding = true;
+                    else
+                        _crouchDecay = _crouchSpeed;
 
-				// Reduce the speed by the crouchSpeed multiplier
-				move *= _crouchSpeed;
+                }
 
-				// Disable one of the colliders when crouching
-				if (_crouchDisableCollider != null)
+                if (_crouchDecay <= _crouchSpeed)
+                    _wasSliding = false;
+
+                // Reduce the speed by the crouchSpeed multiplier
+                if (_wasSliding)
+                {
+                    if (_crouchSpeed < _crouchDecay) // reduce the decay till _crouchSpeed
+                        _crouchDecay -= .015f;
+                    else
+                        _crouchDecay = _crouchSpeed;
+                }
+                
+                // Disable one of the colliders when crouching
+                if (_crouchDisableCollider != null)
 					_crouchDisableCollider.enabled = false;
-			} else
+
+            } else
 			{
-				// Enable the collider when not crouching
-				if (_crouchDisableCollider != null)
+                // Restart running naturally
+                if (_crouchDecay < 1.0f)
+                    _crouchDecay += 0.025f;
+                else
+                    _crouchDecay = 1.0f;
+                
+                // Enable the collider when not crouching
+                if (_crouchDisableCollider != null)
 					_crouchDisableCollider.enabled = true;
 
 				if (_wasCrouching)
 				{
 					_wasCrouching = false;
-					OnCrouchEvent.Invoke(false);
+                    _wasSliding = false;
+                    OnCrouchEvent.Invoke(false);
 				}
 			}
 
-			_animator.SetFloat("speed", Mathf.Abs(move));
+            move *= _crouchDecay;
+            Debug.Log(move);
+            _animator.SetFloat("speed", Mathf.Abs(move));
 
-			// Move the character by finding the target velocity
-			Vector3 targetVelocity = new Vector2(move * 10f, _rigidbody2D.velocity.y);
+            // Move the character by finding the target velocity
+            Vector3 targetVelocity = new Vector2(move * 10f, _rigidbody2D.velocity.y);
 			// And then smoothing it out and applying it to the character
 			_rigidbody2D.velocity = Vector3.SmoothDamp(_rigidbody2D.velocity, targetVelocity, ref _velocity, _movementSmoothing);
 

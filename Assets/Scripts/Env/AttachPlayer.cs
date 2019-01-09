@@ -8,19 +8,19 @@ public class AttachPlayer : MonoBehaviour
     // Start is called before the first frame update
     public GameObject player;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
         if(other.gameObject == player)
             {
-                player.transform.parent = transform;
+                player.transform.SetParent(transform);
             }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnCollisionExit2D(Collision2D other)
     {
         if(other.gameObject == player)
             {
-                player.transform.parent = null;
+                player.transform.SetParent(null);
             }
     }
     // Update is called once per frame

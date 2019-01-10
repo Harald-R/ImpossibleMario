@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
- 	public Transform target = null;
-	public float smoothTime = .20f;
+ 	public Transform target;
+	public float smoothTime = .15f;
 
     private Vector3 offset;
 	private Vector3 velocity;

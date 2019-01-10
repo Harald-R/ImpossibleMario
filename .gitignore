@@ -43,3 +43,4 @@ sysinfo.txt
 # Crashlytics generated file
 Assets/StreamingAssets/crashlytics-build.properties
 
+Assets/Scenes/SampleScene.unity

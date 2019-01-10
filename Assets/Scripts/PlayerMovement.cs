@@ -24,7 +24,8 @@ public class PlayerMovement : NetworkBehaviour
     void Update()
     {
         // Check if the player has authority over this game object, i.e. handling its local object
-        if(hasAuthority) {
+        Debug.Log(hasAuthority + " " + isLocalPlayer);
+        if(isLocalPlayer) {
 #if UNITY_STANDALONE || UNITY_EDITOR
                 _move = Input.GetAxisRaw("Horizontal") * runSpeed;
                 if(Input.GetButtonDown("Jump")) {

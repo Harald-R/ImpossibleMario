@@ -26,7 +26,11 @@ public class AttachPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(player == null)
-            player = GameObject.Find("Player(Clone)");
+        if (player == null)
+        {
+            if(GameObject.FindGameObjectsWithTag("Player").Length > 0)
+                player = GameObject.FindGameObjectsWithTag("Player")[0];
+        }
+            
     }
 }

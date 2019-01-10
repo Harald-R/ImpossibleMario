@@ -37,11 +37,14 @@ public class LevelFinisher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(player == null)
-            player = GameObject.Find("Player(Clone)");
+        if (player == null)
+        {
+            if (GameObject.FindGameObjectsWithTag("Player").Length > 0)
+                player = GameObject.FindGameObjectsWithTag("Player")[0];
+        }
 
-        
-        if((Input.GetKeyDown(KeyCode.C)) && is_collison)
+
+        if ((Input.GetKeyDown(KeyCode.C)) && is_collison)
         {
             WaitForSecs(1);
             Application.LoadLevel("MainMenu");

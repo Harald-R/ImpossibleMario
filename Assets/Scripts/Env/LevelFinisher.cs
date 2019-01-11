@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public class LevelFinisher : MonoBehaviour
 {
@@ -48,6 +49,7 @@ public class LevelFinisher : MonoBehaviour
         {
             WaitForSecs(1);
             Application.LoadLevel("MainMenu");
+            NetworkManager.singleton.StopHost();
         }
     }
 }

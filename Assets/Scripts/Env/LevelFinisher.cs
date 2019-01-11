@@ -3,53 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class LevelFinisher : MonoBehaviour
+public class LevelFinisher : MovingObject
 {
-    // Start is called before the first frame update
-	public GameObject player;
-	private bool is_collison;
-
-	private void OnCollisionEnter2D(Collision2D other)
-	{
-		if(other.gameObject == player)
-        	{
-                is_collison = true;
-        	}
-    }
-
-    private void OnCollisionExit2D(Collision2D other)
-    {
-        if(other.gameObject == player)
-            {
-                is_collison = false;
-            }
-    }  
-
+    bool conditions;
     private IEnumerator WaitForSecs(int x)
     {
         yield return new WaitForSeconds(x);        
     }
 
-    void Start()
+    void finishGame()
     {
-        
+        WaitForSecs(2);
+        Application.LoadLevel("MainMenu");
+        NetworkManager.singleton.StopHost();
     }
 
-    // Update is called once per frame
     void Update()
     {
+        conditions = conditions || ((Input.GetKeyDown(KeyCode.C)) && is_collision);
         if (player == null)
         {
             if (GameObject.FindGameObjectsWithTag("Player").Length > 0)
                 player = GameObject.FindGameObjectsWithTag("Player")[0];
         }
 
-
-        if ((Input.GetKeyDown(KeyCode.C)) && is_collison)
+        if (conditions)
         {
-            WaitForSecs(1);
-            Application.LoadLevel("MainMenu");
-            NetworkManager.singleton.StopHost();
+            moveObject();           
+        }
+
+        if(isDestReached())
+        {
+            finishGame();
         }
     }
 }

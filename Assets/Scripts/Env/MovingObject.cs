@@ -17,7 +17,7 @@ public class MovingObject : MonoBehaviour
     {
         if(other.gameObject == player)
             {           
-            	is_collision=true;
+            	is_collision = true;
                 player.transform.SetParent(transform);
             }
     }
@@ -26,7 +26,7 @@ public class MovingObject : MonoBehaviour
     {
         if(other.gameObject == player)
             {
-               is_collision=false;               
+               is_collision = false;               
                player.transform.SetParent(null);
             }
     }
@@ -40,7 +40,8 @@ public class MovingObject : MonoBehaviour
 
     protected bool isDestReached()
     {
-    	return (new_x == transform.position.x) && (new_y == transform.position.y);
+        Debug.Log(new_y + " " + transform.position.y + " " + (new_y == transform.position.y));
+    	return (Mathf.Abs(new_x-transform.position.x) < 0.0001f) && (Mathf.Abs(new_y - transform.position.y) < 0.0001f);
     }
 
     protected void moveObject()

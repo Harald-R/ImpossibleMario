@@ -22,6 +22,11 @@ public class CameraFollow : MonoBehaviour
 		}
 	}
 
+	public Transform GetTarget()
+	{
+		return target;
+	}
+
 	public void SetTarget(Transform newTarget)
 	{
 		target = newTarget;

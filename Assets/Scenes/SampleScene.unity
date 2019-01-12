@@ -318,6 +318,7 @@ GameObject:
   - component: {fileID: 200926455}
   - component: {fileID: 200926454}
   - component: {fileID: 200926453}
+  - component: {fileID: 200926456}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -373,12 +374,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &331572477 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4618898685849014044, guid: 33446c467d45b40428c8345b0f1cb778,
-    type: 3}
-  m_PrefabInstance: {fileID: 47522409}
+--- !u!114 &200926456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200926452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 902452dfc78fbf08e92166e2fd5caa3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &366971734
 GameObject:
   m_ObjectHideFlags: 0
@@ -5349,8 +5356,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 530154362}
-  - component: {fileID: 530154363}
   - component: {fileID: 530154361}
+  - component: {fileID: 530154363}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: Untagged
@@ -5397,7 +5404,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 530154360}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1a3c122cd7a24f45b2cbb18968c9fb9, type: 3}
+  m_Script: {fileID: 11500000, guid: 85d275cdb1dcd0e24a517b72620bf928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_NetworkPort: 7777
@@ -5470,7 +5477,7 @@ MonoBehaviour:
   matchSize: 4
   isNetworkActive: 0
   matchMaker: {fileID: 0}
-  spawnPoint: {fileID: 331572477}
+  spawnPoint: {fileID: 0}
 --- !u!1 &680628574
 GameObject:
   m_ObjectHideFlags: 0

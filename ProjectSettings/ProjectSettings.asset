@@ -677,7 +677,7 @@ PlayerSettings:
   framebufferDepthMemorylessMode: 0
   projectName: 
   organizationId: 
-  cloudEnabled: 0
+  cloudEnabled: 1
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
   legacyClampBlendShapeWeights: 0

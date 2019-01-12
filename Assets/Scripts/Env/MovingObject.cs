@@ -40,7 +40,7 @@ public class MovingObject : MonoBehaviour
 
     protected bool isDestReached()
     {
-        Debug.Log(new_y + " " + transform.position.y + " " + (new_y == transform.position.y));
+        // Debug.Log(new_y + " " + transform.position.y + " " + (new_y == transform.position.y));
     	return (Mathf.Abs(new_x-transform.position.x) < 0.0001f) && (Mathf.Abs(new_y - transform.position.y) < 0.0001f);
     }
 

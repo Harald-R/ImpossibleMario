@@ -12,11 +12,6 @@ public class LoadOnClick : MonoBehaviour
     public void LoadScene (int level)
 	{
 		SceneManager.LoadScene(level);
-        NetworkManager.singleton.networkAddress = "localhost";
-        NetworkManager.singleton.networkPort = 7777;
-        NetworkManager.singleton.StartHost();
-        serverNetwork = gameObject.AddComponent<NetworkDiscovery>();
-        serverNetwork.Initialize();
-        serverNetwork.StartAsServer();
     }
+
 }

@@ -7,6 +7,11 @@ public class CustomNetworkManager : NetworkManager
 {
     public GameObject spawnPoint = null;
 
+    void Awake()
+    {
+        StartHost();
+    }
+
     void Update()
     {
         if(spawnPoint == null)
@@ -18,4 +23,5 @@ public class CustomNetworkManager : NetworkManager
         GameObject player = (GameObject)Instantiate(playerPrefab, spawnPoint.transform.position, Quaternion.identity);
         NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
     }
+
 }

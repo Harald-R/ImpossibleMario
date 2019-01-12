@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class Hallucination : MonoBehaviour {
+public class ActivateAndDestroyObj : MonoBehaviour {
  
  	public GameObject player;
 	private void OnCollisionEnter2D(Collision2D other)

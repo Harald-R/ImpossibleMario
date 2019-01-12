@@ -5922,7 +5922,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 465d3b4cbfebd9aeabf8c6faa42e2e35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 0.4
   player: {fileID: 0}
   dir_x: 0
   dir_y: -1

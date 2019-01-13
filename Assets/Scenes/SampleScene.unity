@@ -639,6 +639,7 @@ GameObject:
   - component: {fileID: 291714149}
   - component: {fileID: 291714148}
   - component: {fileID: 291714147}
+  - component: {fileID: 291714151}
   m_Layer: 0
   m_Name: spikes_w_larger_collider (17)
   m_TagString: Untagged
@@ -794,6 +795,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &291714151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 291714145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 721eb2837cc1a2746a22d4999ae1e219, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 100
 --- !u!1 &345882436
 GameObject:
   m_ObjectHideFlags: 0
@@ -807,6 +821,7 @@ GameObject:
   - component: {fileID: 345882439}
   - component: {fileID: 345882438}
   - component: {fileID: 345882437}
+  - component: {fileID: 345882442}
   m_Layer: 0
   m_Name: spikes_w_larger_collider (3)
   m_TagString: Untagged
@@ -962,6 +977,19 @@ Transform:
   m_Father: {fileID: 29254842}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &345882442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345882436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 721eb2837cc1a2746a22d4999ae1e219, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 100
 --- !u!1 &366971734
 GameObject:
   m_ObjectHideFlags: 0
@@ -5514,6 +5542,7 @@ GameObject:
   - component: {fileID: 392798947}
   - component: {fileID: 392798951}
   - component: {fileID: 392798952}
+  - component: {fileID: 392798953}
   m_Layer: 0
   m_Name: spikes_w_larger_collider (9)
   m_TagString: Untagged
@@ -5695,6 +5724,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+--- !u!114 &392798953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 392798945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 721eb2837cc1a2746a22d4999ae1e219, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 100
 --- !u!1 &418834405
 GameObject:
   m_ObjectHideFlags: 0
@@ -5708,6 +5750,7 @@ GameObject:
   - component: {fileID: 418834409}
   - component: {fileID: 418834408}
   - component: {fileID: 418834407}
+  - component: {fileID: 418834411}
   m_Layer: 0
   m_Name: spikes_w_larger_collider (16)
   m_TagString: Untagged
@@ -5863,6 +5906,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &418834411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418834405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 721eb2837cc1a2746a22d4999ae1e219, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 100
 --- !u!1 &432341104
 GameObject:
   m_ObjectHideFlags: 0
@@ -5877,6 +5933,7 @@ GameObject:
   - component: {fileID: 432341108}
   - component: {fileID: 432341107}
   - component: {fileID: 432341106}
+  - component: {fileID: 432341111}
   m_Layer: 0
   m_Name: spikes_w_larger_collider (21)
   m_TagString: Untagged
@@ -6045,6 +6102,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &432341111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 432341104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 721eb2837cc1a2746a22d4999ae1e219, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 100
 --- !u!224 &436494035 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8918824185112160640, guid: 57887096007b191e1aeaddeed15fcf9a,
@@ -7083,6 +7153,7 @@ GameObject:
   - component: {fileID: 1088255817}
   - component: {fileID: 1088255816}
   - component: {fileID: 1088255815}
+  - component: {fileID: 1088255819}
   m_Layer: 0
   m_Name: spikes_w_larger_collider (19)
   m_TagString: Untagged
@@ -7238,6 +7309,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1088255819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088255813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 721eb2837cc1a2746a22d4999ae1e219, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 100
 --- !u!1 &1150763959
 GameObject:
   m_ObjectHideFlags: 0
@@ -7372,6 +7456,7 @@ GameObject:
   - component: {fileID: 1171390068}
   - component: {fileID: 1171390067}
   - component: {fileID: 1171390066}
+  - component: {fileID: 1171390071}
   m_Layer: 0
   m_Name: spikes_w_larger_collider (20)
   m_TagString: Untagged
@@ -7540,6 +7625,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1171390071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171390064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 721eb2837cc1a2746a22d4999ae1e219, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 100
 --- !u!1 &1222510799
 GameObject:
   m_ObjectHideFlags: 0
@@ -7553,6 +7651,7 @@ GameObject:
   - component: {fileID: 1222510803}
   - component: {fileID: 1222510802}
   - component: {fileID: 1222510801}
+  - component: {fileID: 1222510805}
   m_Layer: 0
   m_Name: spikes_w_larger_collider (18)
   m_TagString: Untagged
@@ -7708,6 +7807,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1222510805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222510799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 721eb2837cc1a2746a22d4999ae1e219, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 100
 --- !u!1 &1316983611
 GameObject:
   m_ObjectHideFlags: 0
@@ -7722,6 +7834,7 @@ GameObject:
   - component: {fileID: 1316983614}
   - component: {fileID: 1316983613}
   - component: {fileID: 1316983617}
+  - component: {fileID: 1316983618}
   m_Layer: 0
   m_Name: spikes_w_larger_collider (7)
   m_TagString: Untagged
@@ -7890,6 +8003,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+--- !u!114 &1316983618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316983611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 721eb2837cc1a2746a22d4999ae1e219, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 100
 --- !u!1 &1322930902
 GameObject:
   m_ObjectHideFlags: 0
@@ -8053,6 +8179,7 @@ GameObject:
   - component: {fileID: 1384783535}
   - component: {fileID: 1384783534}
   - component: {fileID: 1384783533}
+  - component: {fileID: 1384783537}
   m_Layer: 0
   m_Name: spikes_w_larger_collider (15)
   m_TagString: Untagged
@@ -8208,6 +8335,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1384783537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384783531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 721eb2837cc1a2746a22d4999ae1e219, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 100
 --- !u!1 &1422049658
 GameObject:
   m_ObjectHideFlags: 0
@@ -8389,6 +8529,7 @@ GameObject:
   - component: {fileID: 1459553802}
   - component: {fileID: 1459553801}
   - component: {fileID: 1459553800}
+  - component: {fileID: 1459553805}
   m_Layer: 0
   m_Name: spikes_w_larger_collider (6)
   m_TagString: Untagged
@@ -8557,6 +8698,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1459553805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459553798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 721eb2837cc1a2746a22d4999ae1e219, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 100
 --- !u!1 &1520662471
 GameObject:
   m_ObjectHideFlags: 0
@@ -8754,6 +8908,7 @@ GameObject:
   - component: {fileID: 1569069992}
   - component: {fileID: 1569069991}
   - component: {fileID: 1569069996}
+  - component: {fileID: 1569069997}
   m_Layer: 0
   m_Name: spikes_w_larger_collider (10)
   m_TagString: Untagged
@@ -8935,6 +9090,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+--- !u!114 &1569069997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569069989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 721eb2837cc1a2746a22d4999ae1e219, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 100
 --- !u!4 &1595998664 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 645193752877746613, guid: a9b6096c6213eda4a9327383b613165d,
@@ -9075,6 +9243,7 @@ GameObject:
   - component: {fileID: 1621888833}
   - component: {fileID: 1621888832}
   - component: {fileID: 1621888836}
+  - component: {fileID: 1621888837}
   m_Layer: 0
   m_Name: spikes_w_larger_collider (8)
   m_TagString: Untagged
@@ -9243,6 +9412,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+--- !u!114 &1621888837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621888830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 721eb2837cc1a2746a22d4999ae1e219, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 100
 --- !u!1 &1694994700
 GameObject:
   m_ObjectHideFlags: 0
@@ -9605,6 +9787,7 @@ GameObject:
   - component: {fileID: 1713979120}
   - component: {fileID: 1713979119}
   - component: {fileID: 1713979118}
+  - component: {fileID: 1713979122}
   m_Layer: 0
   m_Name: spikes_w_larger_collider (5)
   m_TagString: Untagged
@@ -9760,6 +9943,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1713979122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713979116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 721eb2837cc1a2746a22d4999ae1e219, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 100
 --- !u!1 &1740956387
 GameObject:
   m_ObjectHideFlags: 0
@@ -9774,6 +9970,7 @@ GameObject:
   - component: {fileID: 1740956390}
   - component: {fileID: 1740956389}
   - component: {fileID: 1740956393}
+  - component: {fileID: 1740956394}
   m_Layer: 0
   m_Name: spikes_w_larger_collider (11)
   m_TagString: Untagged
@@ -9942,6 +10139,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+--- !u!114 &1740956394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740956387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 721eb2837cc1a2746a22d4999ae1e219, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 100
 --- !u!1 &1770016227
 GameObject:
   m_ObjectHideFlags: 0
@@ -72916,6 +73126,7 @@ GameObject:
   - component: {fileID: 1836092749}
   - component: {fileID: 1836092748}
   - component: {fileID: 1836092747}
+  - component: {fileID: 1836092751}
   m_Layer: 0
   m_Name: spikes_w_larger_collider (14)
   m_TagString: Untagged
@@ -73071,6 +73282,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1836092751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836092745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 721eb2837cc1a2746a22d4999ae1e219, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 100
 --- !u!1 &1862405272
 GameObject:
   m_ObjectHideFlags: 0
@@ -73085,6 +73309,7 @@ GameObject:
   - component: {fileID: 1862405276}
   - component: {fileID: 1862405275}
   - component: {fileID: 1862405274}
+  - component: {fileID: 1862405279}
   m_Layer: 0
   m_Name: spikes_w_larger_collider (22)
   m_TagString: Untagged
@@ -73253,6 +73478,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1862405279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862405272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 721eb2837cc1a2746a22d4999ae1e219, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 100
 --- !u!1 &1961057988
 GameObject:
   m_ObjectHideFlags: 0
@@ -73267,6 +73505,7 @@ GameObject:
   - component: {fileID: 1961057992}
   - component: {fileID: 1961057991}
   - component: {fileID: 1961057990}
+  - component: {fileID: 1961057995}
   m_Layer: 0
   m_Name: spikes_w_larger_collider (13)
   m_TagString: Untagged
@@ -73435,6 +73674,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1961057995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961057988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 721eb2837cc1a2746a22d4999ae1e219, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 100
 --- !u!1 &1991432137
 GameObject:
   m_ObjectHideFlags: 0
@@ -73448,6 +73700,7 @@ GameObject:
   - component: {fileID: 1991432141}
   - component: {fileID: 1991432140}
   - component: {fileID: 1991432139}
+  - component: {fileID: 1991432143}
   m_Layer: 0
   m_Name: spikes_w_larger_collider (4)
   m_TagString: Untagged
@@ -73603,6 +73856,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1991432143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991432137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 721eb2837cc1a2746a22d4999ae1e219, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 100
 --- !u!1 &2010210711
 GameObject:
   m_ObjectHideFlags: 0
@@ -73617,6 +73883,7 @@ GameObject:
   - component: {fileID: 2010210715}
   - component: {fileID: 2010210714}
   - component: {fileID: 2010210713}
+  - component: {fileID: 2010210718}
   m_Layer: 0
   m_Name: spikes_w_larger_collider (12)
   m_TagString: Untagged
@@ -73785,6 +74052,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2010210718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010210711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 721eb2837cc1a2746a22d4999ae1e219, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 100
 --- !u!1 &2036727340
 GameObject:
   m_ObjectHideFlags: 0

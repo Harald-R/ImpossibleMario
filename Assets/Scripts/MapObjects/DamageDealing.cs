@@ -8,7 +8,7 @@ public class DamageDealing : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Damage");
+        Debug.Log("I dealt damage");
         GameObject hit = collision.gameObject;
         Health health = hit.GetComponent<Health>();
 

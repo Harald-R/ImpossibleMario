@@ -24,7 +24,9 @@ public class Health : NetworkBehaviour
         currentHealth -= ammount;
         if(currentHealth <= 0)
         {
-            currentHealth = 0;
+            Debug.Log("Death");
+            currentHealth = maxHealth;
+            RpcRespawn();
         }
     }
 
@@ -38,6 +40,7 @@ public class Health : NetworkBehaviour
     {
         if(isLocalPlayer)
         {
+            Debug.Log("Local");
             transform.position = spawnPoint.transform.position;
         }
     }

@@ -1,13 +1,9 @@
 {
   "dependencies": {
-<<<<<<< HEAD
-=======
     "com.unity.2d.animation": "2.0.0-preview.1",
->>>>>>> 9d6ac2cbd1d73c21073fcf2c1492d3a3b8e7dc2a
     "com.unity.2d.spriteshape": "1.0.12-preview.1",
     "com.unity.ads": "2.3.1",
     "com.unity.analytics": "3.2.2",
-    "com.unity.assetbundlebrowser": "1.7.0",
     "com.unity.collab-proxy": "1.2.15",
     "com.unity.package-manager-ui": "2.0.3",
     "com.unity.purchasing": "2.0.3",

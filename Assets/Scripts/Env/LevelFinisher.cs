@@ -5,7 +5,6 @@ using UnityEngine.Networking;
 
 public class LevelFinisher : MovingObject
 {
-    bool conditions;
     private IEnumerator WaitForSecs(int x)
     {
         yield return new WaitForSeconds(x);        
@@ -15,26 +14,18 @@ public class LevelFinisher : MovingObject
     {
         WaitForSecs(2);
         Application.LoadLevel("MainMenu");
-        NetworkManager.singleton.StopHost();
+        //NetworkManager.singleton.StopHost();
     }
 
-    void Update()
+    protected override bool is_ConditionSatisfied()
     {
-        conditions = conditions || ((Input.GetKeyDown(KeyCode.C)) && is_collision);
-        if (player == null)
-        {
-            if (GameObject.FindGameObjectsWithTag("Player").Length > 0)
-                player = GameObject.FindGameObjectsWithTag("Player")[0];
-        }
-
-        if (conditions)
-        {
-            moveObject();           
-        }
-
-        if(isDestReached())
-        {
-            finishGame();
-        }
+        return ((Input.GetKeyDown(KeyCode.C)) && is_collision) || is_moving;
     }
+
+    protected override void DestinationReached()
+    {
+        finishGame();
+        enabled = false;
+    }
+
 }

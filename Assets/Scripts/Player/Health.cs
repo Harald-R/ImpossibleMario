@@ -2,12 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.Events;
 
 public class Health : NetworkBehaviour
 {
     public const int maxHealth = 100;
     public GameObject spawnPoint;
+    [SerializeField] private Animator _animator;
     [SyncVar (hook = "OnChangeHealth")] public int currentHealth = maxHealth;
+
+    private IEnumerator StartRespawnTime(float x)
+    {
+        yield return new WaitForSeconds(x);
+        transform.position = spawnPoint.transform.position;
+        _animator.SetBool("is_dead", false);
+
+    }
 
     public void Awake()
     {
@@ -26,13 +36,14 @@ public class Health : NetworkBehaviour
         {
             Debug.Log("Death");
             currentHealth = maxHealth;
+            _animator.SetBool("is_dead", true);
             RpcRespawn();
         }
     }
 
     void OnChangeHealth(int health)
     {
-        Debug.Log("Took Damage");
+        //Debug.Log("Took Damage");
     }
 
     [ClientRpc]
@@ -40,8 +51,7 @@ public class Health : NetworkBehaviour
     {
         if(isLocalPlayer)
         {
-            Debug.Log("Local");
-            transform.position = spawnPoint.transform.position;
+            StartCoroutine(StartRespawnTime(0.13F));
         }
     }
 }

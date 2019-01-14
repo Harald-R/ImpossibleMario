@@ -26,7 +26,8 @@ public class PlayerConnectionObject : NetworkBehaviour
         // Instantiate the player unit object
         GameObject playerInstance = Instantiate(playerPrefab, spawnPoint.transform.position, Quaternion.identity);
 
+        short playerId = playerControllerId;
         // Propagate the unit to all clients
-        NetworkServer.SpawnWithClientAuthority(playerInstance, connectionToClient);
+        NetworkServer.AddPlayerForConnection(connectionToClient, playerInstance, ++playerId);
     }
 }

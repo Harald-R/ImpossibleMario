@@ -39,6 +39,8 @@ public class CustomNetworkManager : NetworkManager
 
     public override void OnClientConnect(NetworkConnection conn)
     {
+        Debug.Log("Client Connected to the server");
         // base.OnClientConnect(conn);
     }
+
 }

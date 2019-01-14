@@ -742,7 +742,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
-  player: {fileID: 0}
   dir_x: 0
   dir_y: 2
 --- !u!212 &291714150
@@ -910,7 +909,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
-  player: {fileID: 0}
   dir_x: 0
   dir_y: 2
 --- !u!212 &345882440
@@ -5645,7 +5643,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
-  player: {fileID: 0}
   dir_x: 0
   dir_y: 2
 --- !u!212 &392798950
@@ -5853,7 +5850,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
-  player: {fileID: 0}
   dir_x: 0
   dir_y: 2
 --- !u!212 &418834410
@@ -6282,7 +6278,7 @@ MonoBehaviour:
   m_MaxDelay: 0.01
   m_LogLevel: 2
   m_PlayerPrefab: {fileID: 126, guid: e5af08d3e72d041cf911cbc538089d2d, type: 3}
-  m_AutoCreatePlayer: 1
+  m_AutoCreatePlayer: 0
   m_PlayerSpawnMethod: 0
   m_OfflineScene: 
   m_OnlineScene: 
@@ -6984,7 +6980,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
-  player: {fileID: 0}
   dir_x: 0
   dir_y: 2
 --- !u!212 &925461421
@@ -7180,7 +7175,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
-  player: {fileID: 0}
   dir_x: 0
   dir_y: 2
 --- !u!212 &1088255818
@@ -7482,7 +7476,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
-  player: {fileID: 0}
   dir_x: 0
   dir_y: 2
 --- !u!212 &1222510804
@@ -7665,7 +7658,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
-  player: {fileID: 0}
   dir_x: 0
   dir_y: 2
 --- !u!212 &1316983616
@@ -7789,7 +7781,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.4
-  player: {fileID: 0}
   dir_x: 0
   dir_y: -1
 --- !u!212 &1322930905
@@ -8010,7 +8001,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
-  player: {fileID: 0}
   dir_x: 0
   dir_y: 2
 --- !u!212 &1384783536
@@ -8373,7 +8363,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
-  player: {fileID: 0}
   dir_x: 0
   dir_y: 2
 --- !u!212 &1459553804
@@ -8447,10 +8436,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1520662474}
   - component: {fileID: 1520662473}
-  - component: {fileID: 1520662472}
-  - component: {fileID: 1520662475}
   - component: {fileID: 1520662476}
+  - component: {fileID: 1520662475}
   - component: {fileID: 1520662477}
+  - component: {fileID: 1520662478}
   m_Layer: 0
   m_Name: spikes
   m_TagString: Untagged
@@ -8458,22 +8447,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1520662472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1520662471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8dac6151921a7dbd5a80471418c13518, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 30
-  player: {fileID: 0}
-  dir_x: 0
-  dir_y: 2
 --- !u!212 &1520662473
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8530,48 +8503,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1520662471}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.448333, y: -4.275228, z: 0.11832075}
+  m_LocalPosition: {x: -4.448333, y: -4.49, z: 0.11832075}
   m_LocalScale: {x: 2.0339248, y: 4.2400227, z: 1}
   m_Children: []
   m_Father: {fileID: 29254842}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &1520662475
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1520662471}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.6333333, y: 0.53333336}
-    newSize: {x: 0.6333333, y: 0.53333336}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.018292943, y: 0.31227434}
-      - {x: -0.057496957, y: 0.32000202}
-      - {x: -0.04246677, y: 0.25695166}
-      - {x: -0.038921542, y: 0.19284038}
-      - {x: -0.046356983, y: 0.08522685}
-      - {x: -0.21543103, y: 0.061959703}
-      - {x: -0.3166667, y: -0.26666668}
-      - {x: 0.3166667, y: -0.26666668}
-      - {x: 0.20823921, y: 0.061030302}
-      - {x: 0.060845915, y: 0.08925622}
---- !u!60 &1520662476
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8596,16 +8534,59 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.028103339, y: 0.34008083}
-      - {x: -0.03211578, y: 0.34074578}
-      - {x: -0.010802876, y: 0.2493087}
-      - {x: -0.061746128, y: 0.04224045}
-      - {x: -0.21349736, y: 0.04839036}
+    - - {x: -0.26917654, y: 0.19605549}
+      - {x: -0.3309848, y: 0.014481264}
       - {x: -0.3166667, y: -0.26666668}
       - {x: 0.3166667, y: -0.26666668}
-      - {x: 0.22670679, y: 0.037481587}
-      - {x: 0.06219907, y: 0.055452734}
-      - {x: 0.029681338, y: 0.27719325}
+      - {x: 0.32561022, y: -0.14100909}
+      - {x: 0.30134618, y: -0.012567853}
+      - {x: 0.26054204, y: 0.12919135}
+      - {x: 0.21234947, y: 0.19812657}
+--- !u!60 &1520662476
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1520662471}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.6333333, y: 0.53333336}
+    newSize: {x: 0.6333333, y: 0.53333336}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.17941907, y: 0.17526837}
+      - {x: -0.21457762, y: 0.18148088}
+      - {x: -0.2188951, y: 0.17733894}
+      - {x: -0.222773, y: 0.16876784}
+      - {x: -0.22748223, y: 0.084027365}
+      - {x: -0.26332158, y: 0.07845259}
+      - {x: -0.25804383, y: -0.016919643}
+      - {x: -0.2851467, y: -0.022676269}
+      - {x: -0.2877638, y: -0.18815151}
+      - {x: -0.3147797, y: -0.18571982}
+      - {x: -0.3166667, y: -0.26666668}
+      - {x: 0.3166667, y: -0.26666668}
+      - {x: 0.31621438, y: -0.18882369}
+      - {x: 0.28363797, y: -0.18688126}
+      - {x: 0.28541282, y: -0.032763317}
+      - {x: 0.25478265, y: -0.02278395}
+      - {x: 0.2590319, y: 0.065124355}
+      - {x: 0.22959056, y: 0.07993586}
+      - {x: 0.22658819, y: 0.17510337}
+      - {x: 0.20765877, y: 0.18292123}
 --- !u!114 &1520662477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8619,6 +8600,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 100
+--- !u!114 &1520662478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1520662471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5ede8b2e63dcc340be5777bd73acf84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 30
+  dir_x: 0
+  dir_y: 2
+  TriggerDistance: 1.86
 --- !u!1 &1569069989
 GameObject:
   m_ObjectHideFlags: 0
@@ -8752,7 +8749,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
-  player: {fileID: 0}
   dir_x: 0
   dir_y: 2
 --- !u!212 &1569069995
@@ -9074,7 +9070,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
-  player: {fileID: 0}
   dir_x: 0
   dir_y: 2
 --- !u!212 &1621888835
@@ -9422,7 +9417,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
-  player: {fileID: 0}
   dir_x: 0
   dir_y: 2
 --- !u!212 &1704477035
@@ -9618,7 +9612,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
-  player: {fileID: 0}
   dir_x: 0
   dir_y: 2
 --- !u!212 &1713979121
@@ -9801,7 +9794,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
-  player: {fileID: 0}
   dir_x: 0
   dir_y: 2
 --- !u!212 &1740956392
@@ -72957,7 +72949,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
-  player: {fileID: 0}
   dir_x: 0
   dir_y: 2
 --- !u!212 &1836092750
@@ -73153,7 +73144,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
-  player: {fileID: 0}
   dir_x: 0
   dir_y: 2
 --- !u!212 &1862405278
@@ -73349,7 +73339,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
-  player: {fileID: 0}
   dir_x: 0
   dir_y: 2
 --- !u!212 &1961057994
@@ -73531,7 +73520,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
-  player: {fileID: 0}
   dir_x: 0
   dir_y: 2
 --- !u!212 &1991432142
@@ -73727,7 +73715,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
-  player: {fileID: 0}
   dir_x: 0
   dir_y: 2
 --- !u!212 &2010210717

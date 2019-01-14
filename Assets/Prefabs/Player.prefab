@@ -252,7 +252,7 @@ MonoBehaviour:
     m_Bits: 55
   _groundCheck: {fileID: 128}
   _ceilingCheck: {fileID: 127}
-  _crouchDisableCollider: {fileID: 0}
+  _crouchDisableCollider: {fileID: 132}
   _animator: {fileID: 133}
   OnLandEvent:
     m_PersistentCalls:
@@ -325,4 +325,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 231897a799a22784f8fe246b5488279d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 0}
+  _animator: {fileID: 133}
   currentHealth: 100

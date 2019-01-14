@@ -24,7 +24,7 @@ public class PlayerMovement : NetworkBehaviour
     void Update()
     {
         // Check if the player has authority over this game object, i.e. handling its local object
-        if(hasAuthority) {
+        if(isLocalPlayer) {
             // Set the camera target for our local player if it was not already set
             if(cameraFollow.GetTarget() == null) {
                 cameraFollow.SetTarget(this.GetComponentInParent<Transform>());
@@ -62,7 +62,7 @@ public class PlayerMovement : NetworkBehaviour
 
     void FixedUpdate()
     {
-        if(!hasAuthority) {
+        if(!isLocalPlayer) {
             return;
         }
 
@@ -88,7 +88,7 @@ public class PlayerMovement : NetworkBehaviour
     void RpcMove(Vector3 position, float move, bool crouch, bool jump)
     {
         // Do not update the model for the local player
-        if(hasAuthority) {
+        if(isLocalPlayer) {
             return;
         }
 

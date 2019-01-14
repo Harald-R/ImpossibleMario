@@ -8,7 +8,7 @@ public class LoadOnClick : MonoBehaviour
 {
 	public string sceneName;
 
-	public void LoadScene()
+    public void LoadScene()
 	{
 		try {
 			GameType gameType = GameObject.Find("GameType").GetComponent<GameTypes>().GetGameType();
@@ -17,6 +17,7 @@ public class LoadOnClick : MonoBehaviour
 
 			networkManager.ChangeScene(sceneName);
 			networkManager.StartHosting();
+            
 		} catch(System.Exception e) {
 			Debug.Log("Error: " + e);
 		}

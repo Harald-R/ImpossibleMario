@@ -137,10 +137,12 @@ public class CharacterController2D : MonoBehaviour
             else
             {
                 // Restart running naturally
-                if (_crouchDecay < 1.0f)
-                    _crouchDecay += 0.025f;
-                else
-                    _crouchDecay = 1.0f;
+                /*               if (_crouchDecay < 1.0f)
+                                   _crouchDecay += 0.025f;
+                               else
+                                   _crouchDecay = 1.0f;*/
+
+                _crouchDecay = 1.0f;
 
                 // Enable the collider when not crouching
                 if (_crouchDisableCollider != null)

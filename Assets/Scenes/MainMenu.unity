@@ -4160,6 +4160,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: NetworkManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5306419691074298487, guid: 800e3dd06a96359fbaf19f1d04172578,
+        type: 3}
+      propertyPath: m_ShowGUI
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5306419691074298480, guid: 800e3dd06a96359fbaf19f1d04172578,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4259,15 +4264,15 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SpawnPrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 126, guid: e5af08d3e72d041cf911cbc538089d2d, type: 3}
+      objectReference: {fileID: 0}
+    - target: {fileID: 5306419691074298481, guid: 800e3dd06a96359fbaf19f1d04172578,
+        type: 3}
+      propertyPath: m_AutoCreatePlayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5306419691074298486, guid: 800e3dd06a96359fbaf19f1d04172578,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5306419691074298487, guid: 800e3dd06a96359fbaf19f1d04172578,
-        type: 3}
-      propertyPath: m_ShowGUI
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

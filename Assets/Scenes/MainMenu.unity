@@ -4160,11 +4160,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NetworkManager
       objectReference: {fileID: 0}
-    - target: {fileID: 5306419691074298487, guid: 800e3dd06a96359fbaf19f1d04172578,
-        type: 3}
-      propertyPath: m_ShowGUI
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5306419691074298480, guid: 800e3dd06a96359fbaf19f1d04172578,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4218,61 +4213,6 @@ PrefabInstance:
     - target: {fileID: 5306419691074298480, guid: 800e3dd06a96359fbaf19f1d04172578,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5306419691074298481, guid: 800e3dd06a96359fbaf19f1d04172578,
-        type: 3}
-      propertyPath: m_Channels.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5306419691074298481, guid: 800e3dd06a96359fbaf19f1d04172578,
-        type: 3}
-      propertyPath: m_SpawnPrefabs.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5306419691074298481, guid: 800e3dd06a96359fbaf19f1d04172578,
-        type: 3}
-      propertyPath: m_OnlineScene
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5306419691074298481, guid: 800e3dd06a96359fbaf19f1d04172578,
-        type: 3}
-      propertyPath: m_OfflineScene
-      value: MainMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 5306419691074298481, guid: 800e3dd06a96359fbaf19f1d04172578,
-        type: 3}
-      propertyPath: m_PlayerPrefab
-      value: 
-      objectReference: {fileID: 26, guid: 7f3e61410a81cde3291e29b2d457ac6e, type: 3}
-    - target: {fileID: 5306419691074298481, guid: 800e3dd06a96359fbaf19f1d04172578,
-        type: 3}
-      propertyPath: m_CustomConfig
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5306419691074298481, guid: 800e3dd06a96359fbaf19f1d04172578,
-        type: 3}
-      propertyPath: m_Channels.Array.data[0]
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5306419691074298481, guid: 800e3dd06a96359fbaf19f1d04172578,
-        type: 3}
-      propertyPath: m_UseSimulator
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5306419691074298481, guid: 800e3dd06a96359fbaf19f1d04172578,
-        type: 3}
-      propertyPath: m_SpawnPrefabs.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5306419691074298481, guid: 800e3dd06a96359fbaf19f1d04172578,
-        type: 3}
-      propertyPath: m_AutoCreatePlayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5306419691074298486, guid: 800e3dd06a96359fbaf19f1d04172578,
-        type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

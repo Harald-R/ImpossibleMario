@@ -4,10 +4,12 @@ using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(DeathSound))]
 public class Health : NetworkBehaviour
 {
     public const int maxHealth = 100;
     public GameObject spawnPoint;
+    private DeathSound deathSound;
     [SerializeField] private Animator _animator;
     [SyncVar (hook = "OnChangeHealth")] public int currentHealth = maxHealth;
 
@@ -22,6 +24,7 @@ public class Health : NetworkBehaviour
     public void Awake()
     {
         spawnPoint = GameObject.Find("LevelStart");
+        deathSound = GetComponent<DeathSound>();
     }
 
     public void TakeDamage(int ammount)
@@ -31,13 +34,16 @@ public class Health : NetworkBehaviour
             return;
         }
 
-        currentHealth -= ammount;
-        if(currentHealth <= 0)
+        if (currentHealth > 0)
         {
-            Debug.Log("Death");
-            currentHealth = maxHealth;
-            _animator.SetBool("is_dead", true);
-            RpcRespawn();
+            currentHealth -= ammount;
+            if (currentHealth <= 0)
+            {
+                Debug.Log("Death");
+                currentHealth = maxHealth;
+                _animator.SetBool("is_dead", true);
+                RpcRespawn();
+            }
         }
     }
 
@@ -51,7 +57,9 @@ public class Health : NetworkBehaviour
     {
         if(isLocalPlayer)
         {
-            StartCoroutine(StartRespawnTime(0.13F));
+            if(deathSound)
+                deathSound.PlaySound();
+            StartCoroutine(StartRespawnTime(0.17F));
         }
     }
 }

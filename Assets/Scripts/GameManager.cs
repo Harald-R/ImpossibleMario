@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Networking;
 
 public class GameManager : MonoBehaviour
 {
@@ -29,5 +30,6 @@ public class GameManager : MonoBehaviour
     {
         // TODO: Do the server disconnect logic
         SceneManager.LoadScene("MainMenu");
+        NetworkManager.singleton.StopHost();
     }
 }

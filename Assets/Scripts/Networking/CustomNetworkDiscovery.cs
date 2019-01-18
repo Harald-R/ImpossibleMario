@@ -22,8 +22,8 @@ public class CustomNetworkDiscovery : NetworkDiscovery
 
     public void StartBroadcast()
     {
-        base.StopBroadcast();
-        base.Initialize();
+        Debug.Log("StartBroadcast");
+        //base.StopBroadcast();
         base.StartAsServer();
     }
 

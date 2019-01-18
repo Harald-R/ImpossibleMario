@@ -14,7 +14,7 @@ public class LevelFinisher : MovingObject
     {
         WaitForSecs(2);
         Application.LoadLevel("MainMenu");
-        //NetworkManager.singleton.StopHost();
+        NetworkManager.singleton.StopHost();
     }
 
     protected override bool is_ConditionSatisfied()

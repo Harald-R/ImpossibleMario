@@ -18,7 +18,7 @@ public class ProximityObject : MovingObject
             Distance = Vector3.Distance(transform.position, players[0].transform.position);
             if (Distance < TriggerDistance) return true;
         }
-        Debug.Log(Distance);
+
         foreach (GameObject player in players)
         {
             Distance = Vector3.Distance(transform.position, player.transform.position);

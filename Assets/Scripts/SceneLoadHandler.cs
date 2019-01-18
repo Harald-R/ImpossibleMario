@@ -29,7 +29,7 @@ public class SceneLoadHandler : MonoBehaviour
         switch(gameType)
         {
             case Globals.GameType.NONE:
-                Debug.LogError("Error: GameType is NONE");
+                Debug.Log("Error: GameType is NONE");
                 break;
             case Globals.GameType.MULTIPLAYER_HOST:
                 networkDiscovery.StartBroadcast();

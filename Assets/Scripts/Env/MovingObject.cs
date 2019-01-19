@@ -25,7 +25,6 @@ public class MovingObject : MonoBehaviour, IEventSubject
         if(Array.Exists(players, element => element == other.gameObject))
         {           
             is_collision = true;
-            other.gameObject.transform.SetParent(transform);
         }
     }
 
@@ -34,7 +33,6 @@ public class MovingObject : MonoBehaviour, IEventSubject
         if (Array.Exists(players, element => element == other.gameObject))
         {
             is_collision = false;
-            other.gameObject.transform.SetParent(null);
         }
     }
 
@@ -60,6 +58,7 @@ public class MovingObject : MonoBehaviour, IEventSubject
 
     protected void moveObject()
     {
+        Debug.Log("moving");
         is_moving = true;
         transform.position = Vector3.MoveTowards(transform.position, new Vector3(new_x, new_y , transform.position.z), step);          		
     }

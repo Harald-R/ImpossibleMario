@@ -13,6 +13,11 @@ public class GameListPanel : MonoBehaviour
 		AvailableGamesList.OnAvailableGamesChanged += AvailableGamesList_OnAvailableGamesChanged;
 	}
 
+	private void OnDestroy()
+	{
+		AvailableGamesList.OnAvailableGamesChanged -= AvailableGamesList_OnAvailableGamesChanged;
+	}
+
 	private void AvailableGamesList_OnAvailableGamesChanged(List<LanConnectionInfo> connections)
 	{
 		ClearExistingButtons();

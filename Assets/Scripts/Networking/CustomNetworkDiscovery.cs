@@ -6,7 +6,7 @@ using UnityEngine.Networking;
 public class CustomNetworkDiscovery : NetworkDiscovery
 {
     private float timeout = 5f;
-
+    private float lastUpdateTime = 0f;
     private Dictionary<LanConnectionInfo, float> lanAddresses = new Dictionary<LanConnectionInfo, float>();
 
     private void Awake()
@@ -58,7 +58,11 @@ public class CustomNetworkDiscovery : NetworkDiscovery
             lanAddresses[connectionInfo] = Time.time + timeout;
         } else {
             lanAddresses.Add(connectionInfo, Time.time + timeout);
+        }
+
+        if(Time.time - lastUpdateTime >= timeout) {
             UpdateGameInfo();
+            lastUpdateTime = Time.time;
         }
     }
 

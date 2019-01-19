@@ -13,22 +13,22 @@ public class GameManager : MonoBehaviour
         if(pauseMenu == null) {
             pauseMenu = GameObject.Find("PauseMenu");
         }
+
+        PauseMenu.IsOn = false;
     }
 
     public void TogglePauseMenu()
-    {        
+    {
         if(pauseMenu.gameObject.activeInHierarchy) {
             pauseMenu.gameObject.SetActive(false);
-            // Time.timeScale = 1f;
         } else {
             pauseMenu.gameObject.SetActive(true);
-            // Time.timeScale = 0f;
         }
+        PauseMenu.IsOn = pauseMenu.activeSelf;
     }
 
     public void ReturnToMainMenu()
     {
-        // TODO: Do the server disconnect logic
         SceneManager.LoadScene("MainMenu");
         NetworkManager.singleton.StopHost();
     }

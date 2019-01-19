@@ -26,8 +26,9 @@ public class PlayerMovement : NetworkBehaviour
 
     void Update()
     {
-
-        
+        if (PauseMenu.IsOn) {
+            return;
+        }
 
         // Check if the player has authority over this game object, i.e. handling its local object
         if (isLocalPlayer) {

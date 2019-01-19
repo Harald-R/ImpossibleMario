@@ -11,7 +11,7 @@ public class Invisibility : MonoBehaviour
     IEnumerator NowYouSeeMeNowYouDont()
     {
     	while(true){
-    	yield return new WaitForSeconds(3);
+    	yield return new WaitForSeconds(2);
     	if(this.gameObject.GetComponent<Renderer>().enabled )
         	this.gameObject.GetComponent<Renderer>().enabled = false;
         else

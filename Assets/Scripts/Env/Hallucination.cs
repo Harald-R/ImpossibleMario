@@ -2,32 +2,47 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using System;
 
-public class Hallucination : MonoBehaviour 
+public class Hallucination : MonoBehaviour, IEventSubject
 {
- 
- 	public GameObject player;
-	private void OnCollisionEnter2D(Collision2D other)
+    protected GameObject[] players;
+    public GameObject[] eventTriggers;
+    public float DissapearTime = 1f;
+    private bool state = false;
+
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject == player)
-            {
-                WaitForSecs(3);
-        		gameObject.SetActive(false);
-            }
+        if (Array.Exists(players, element => element == other.gameObject))
+        {
+            StartCoroutine(WaitForSecsAndDestroy(DissapearTime));
+        }
     }
 
- 
-    IEnumerator WaitForSecs (int seconds){    	
+    IEnumerator WaitForSecsAndDestroy(float seconds){    	
         yield return new WaitForSeconds(seconds);
+        gameObject.SetActive(false);
+        state = true;
+        Notify();
     }
+
+    public void Notify()
+    {
+        foreach (GameObject eventTrigger in eventTriggers)
+        {
+            eventTrigger.GetComponent<IEventTrigger>().NotifyChange();
+        }
+    }
+
+    public bool GetState()
+    {
+        return state;
+    }
+
 
     void Update()
     {
-    	if (player == null)
-        {
-            if(GameObject.FindGameObjectsWithTag("Player").Length > 0)
-                player = GameObject.FindGameObjectsWithTag("Player")[0];
-        }
+        players = GameObject.FindGameObjectsWithTag("Player");
     }
 }
  

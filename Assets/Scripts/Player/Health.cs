@@ -39,7 +39,6 @@ public class Health : NetworkBehaviour
             currentHealth -= ammount;
             if (currentHealth <= 0)
             {
-                Debug.Log("Death");
                 currentHealth = maxHealth;
                 _animator.SetBool("is_dead", true);
                 RpcRespawn();

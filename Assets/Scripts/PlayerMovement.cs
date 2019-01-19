@@ -8,8 +8,9 @@ public class PlayerMovement : NetworkBehaviour
 {
     public CharacterController2D controller;
     public float runSpeed = 40f;
-    public Joystick joystick;
-    public JumpButton jumpButton;
+    public VariableJoystick joystick = null;
+    public JumpButton jumpButton = null;
+    private bool wasJumping = false;
 
     private float _move;
     private bool _crouch;
@@ -19,17 +20,22 @@ public class PlayerMovement : NetworkBehaviour
     public void Start()
     {
         cameraFollow = Camera.main.GetComponent<CameraFollow>();
+        joystick = GameObject.Find("Variable Joystick").GetComponent<VariableJoystick>();
+        jumpButton = GameObject.Find("Jump Button").GetComponent<JumpButton>();
     }
 
     void Update()
     {
+
+        
+
         // Check if the player has authority over this game object, i.e. handling its local object
-        if(isLocalPlayer) {
+        if (isLocalPlayer) {
             // Set the camera target for our local player if it was not already set
             if(cameraFollow.GetTarget() == null) {
                 cameraFollow.SetTarget(this.GetComponentInParent<Transform>());
             }
-
+            
 #if UNITY_STANDALONE || UNITY_EDITOR
             _move = Input.GetAxisRaw("Horizontal") * runSpeed;
             if(Input.GetButtonDown("Jump")) {
@@ -43,20 +49,30 @@ public class PlayerMovement : NetworkBehaviour
             }
                     
 #elif UNITY_ANDROID
-            if(Mathf.Abs(joystick.Horizontal) < .2f) {
+            if(Mathf.Abs(joystick.GetComponent<VariableJoystick>().Horizontal) < .2f) {
                 _move = 0f;
-            } else if(Mathf.Abs(joystick.Horizontal) < .5f) {
-                _move = Mathf.Sign(joystick.Horizontal) * ScaleToRange(Mathf.Abs(joystick.Horizontal), .2f, .5f, runSpeed * .5f, runSpeed);
             } else {
                 _move = Mathf.Sign(joystick.Horizontal) * runSpeed;
             }
 
-            if(jumpButton.isPressed) {
-                _jump = true;
+            if (jumpButton.isPressed)
+            {
+                if (!wasJumping)
+                {
+                    _jump = true;
+                    wasJumping = true;
+                }
+                else
+                    _jump = false;
+            }
+            else
+            {
+                _jump = false;
+                wasJumping = false;
             }
 #endif
-            // Send the new state of the model to the server
-            CmdMove(transform.position, _move, _crouch, _jump);
+                    // Send the new state of the model to the server
+                    CmdMove(transform.position, _move, _crouch, _jump);
         }
     }
 

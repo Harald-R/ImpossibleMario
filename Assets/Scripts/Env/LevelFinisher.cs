@@ -19,7 +19,7 @@ public class LevelFinisher : MovingObject
 
     protected override bool is_ConditionSatisfied()
     {
-        return ((Input.GetKeyDown(KeyCode.C)) && is_collision) || is_moving;
+        return  is_collision || is_moving;
     }
 
     protected override void DestinationReached()

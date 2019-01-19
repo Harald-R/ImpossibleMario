@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class MovingObject : MonoBehaviour
+public class MovingObject : MonoBehaviour, IEventSubject
 {
     public float speed;
     protected GameObject[] players;
@@ -16,6 +16,9 @@ public class MovingObject : MonoBehaviour
 	float new_y;
 	float new_x;
 	float step;
+
+    public GameObject[] eventTriggers;
+    protected bool state = false;
 
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -68,6 +71,9 @@ public class MovingObject : MonoBehaviour
 
     protected virtual void DestinationReached()
     {
+        state = true;
+        Notify();
+        
         is_moving = false;
         enabled = false;
     }
@@ -86,4 +92,18 @@ public class MovingObject : MonoBehaviour
             DestinationReached();
         }
     }
- }
+
+    public void Notify()
+    {
+        foreach (GameObject eventTrigger in eventTriggers)
+        {
+            Debug.Log("Reached" + GetState());
+            eventTrigger.GetComponent<IEventTrigger>().NotifyChange();
+        }
+    }
+
+    public bool GetState()
+    {
+        return state;
+    }
+}

@@ -7,6 +7,8 @@ using Globals;
 
 public class SceneLoadHandler : MonoBehaviour
 {
+    public GameManager gameManager = null;
+
     void OnEnable()
     {
         SceneManager.sceneLoaded += OnLevelFinishedLoading;
@@ -15,6 +17,13 @@ public class SceneLoadHandler : MonoBehaviour
     void OnDisable()
     {
         SceneManager.sceneLoaded -= OnLevelFinishedLoading;
+    }
+
+    void Start()
+    {
+        if(gameManager == null) {
+            gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        }
     }
 
     void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
@@ -33,6 +42,8 @@ public class SceneLoadHandler : MonoBehaviour
                 break;
             case Globals.GameType.MULTIPLAYER_HOST:
                 networkDiscovery.StartBroadcast();
+                gameManager.gameObject.SetActive(true);
+                gameManager.WaitForPlayers();
                 break;
             default:
                 break;

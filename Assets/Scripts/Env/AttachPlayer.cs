@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using System;
 
 public class AttachPlayer : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class AttachPlayer : MonoBehaviour
     {
         if (Array.Exists(players, element => element == other.gameObject))
         {
-            element.transform.SetParent(transform);
+            other.gameObject.transform.SetParent(transform);
         }
     }
 
@@ -20,7 +21,7 @@ public class AttachPlayer : MonoBehaviour
     {
         if (Array.Exists(players, element => element == other.gameObject))
         {
-            element.transform.SetParent(null);
+            other.gameObject.transform.SetParent(null);
         }
     }
     // Update is called once per frame

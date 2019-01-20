@@ -40,7 +40,6 @@ public class Health : NetworkBehaviour
             if (currentHealth <= 0)
             {
                 currentHealth = maxHealth;
-                _animator.SetBool("is_dead", true);
                 RpcRespawn();
             }
         }
@@ -56,7 +55,8 @@ public class Health : NetworkBehaviour
     {
         if(isLocalPlayer)
         {
-            if(deathSound)
+            _animator.SetBool("is_dead", true);
+            if (deathSound)
                 deathSound.PlaySound();
             StartCoroutine(StartRespawnTime(0.17F));
         }

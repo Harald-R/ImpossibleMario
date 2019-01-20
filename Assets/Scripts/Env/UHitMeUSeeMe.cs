@@ -5,14 +5,14 @@ using UnityEngine;
 public class UHitMeUSeeMe : MonoBehaviour
 {
 
-	public GameObject player;
+    protected GameObject[] players;
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject == player)
-            {                
-        	this.gameObject.GetComponent<Renderer>().enabled = true;
-            }
+        if (Array.Exists(players, element => element == other.gameObject))
+        {
+            this.gameObject.GetComponent<Renderer>().enabled = true;
+        }
     }
 
     void Start()
@@ -22,11 +22,6 @@ public class UHitMeUSeeMe : MonoBehaviour
 
     void Update()
     {
-        if (player == null)
-        {
-            if(GameObject.FindGameObjectsWithTag("Player").Length > 0)
-                player = GameObject.FindGameObjectsWithTag("Player")[0];
-        }
-            
+        players = GameObject.FindGameObjectsWithTag("Player");
     }
 }
